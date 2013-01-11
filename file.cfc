@@ -1,7 +1,8 @@
 <cfcomponent>
 
 <cffunction name="test">
-	<cfreturn true>
+	<cfset var param = true>
+	<cfreturn param>
 </cffunction>
 
 </cfcomponent>
