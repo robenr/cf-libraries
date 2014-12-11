@@ -5,4 +5,9 @@
 	<cfreturn param>
 </cffunction>
 
+<cffunction name="getSomthing">
+	<cfset var param = true>
+	<cfreturn param>
+</cffunction>
+
 </cfcomponent>
