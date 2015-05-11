@@ -1,6 +1,5 @@
 # cf-libraries
 
-This library contains several helper libraries
-
+This contains several helper libraries for coldfusion platform
 
 ## By Roben Rajan
