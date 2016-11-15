@@ -48,14 +48,13 @@
     
     <cffunction name="xe" access="private" returntype="Struct">
     <cfargument name="conversion" type="struct" required="true">
-        <cfhttp method="get" url="https://xecdapi.xe.com/v1/convert_to.json" username="wb21(us)inc.975615761" password="k6964bkdbar46d3i7q998cqoqt" result="hello">
+        <cfhttp method="get" url="https://xecdapi.xe.com/v1/convert_to.json" username="#xeusername#" password="#xepassword" result="hello">
             <cfhttpparam name="to" type="url" value="#arguments.conversion.country#">
             <cfhttpparam name="from" type="url" value="#arguments.conversion.convert_country#">
             <cfhttpparam name="amount" type="url" value="#arguments.conversion.amount#">
         </cfhttp>
         <cfset parseResult = DeserializeJson(hello.Filecontent)>
-        <!--- <cfset parseResult = DeserializeJson('{"terms":"http://www.xe.com/legal/dfs.php","privacy":"http://www.xe.com/privacy.php","to":"CAD","amount":1000.0,"timestamp":"2016-06-29T14:14:00Z","from":[{"quotecurrency":"USD","mid":769.1894485117}]}')> --->
-            
+
         <cfif StructKeyExists(parseResult, "from")>
             <cfset from = parseResult.from>
             <cfif ArrayLen(from) gt 0>
